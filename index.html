@@ -44,6 +44,8 @@
 					</div>
 				</form>
 
+				<br>
+				<p>Demo code:</p>
 				<pre>
 &lt;link rel=&quot;stylesheet&quot; href=&quot;stylesheets/floatinglabel.css&quot;&gt;
 
@@ -54,12 +56,18 @@
 	&lt;div class=&quot;form-group&quot;&gt;
 	    &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;password&quot; placeholder=&quot;Password&quot;&gt;
 	&lt;/div&gt;
+	&lt;div class=&quot;form-group&quot;&gt;
+	    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;ignored&quot; placeholder=&quot;I'll be ignored :(&quot;&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;form-group&quot;&gt;
+	    &lt;input type=&quot;submit&quot; class=&quot;form-control btn btn-success&quot; value=&quot;Fake submit&quot;&gt;
+	&lt;/div&gt;
 &lt;/form&gt;
 
 &lt;script src=&quot;//code.jquery.com/jquery-1.11.0.min.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;javascripts/jquery.floatinglabel.js&quot;&gt;&lt;/script&gt;
 &lt;script&gt; 
-	$(&#39;#form1&#39;).floatinglabel(); 
+	$(&#39;#form1&#39;).floatinglabel({ ignoreId: ['ignored'] }); 
 &lt;/script&gt;
 				</pre>
 				<hr>
@@ -69,7 +77,7 @@
 		<div id="download" class="row">
 			<div class="col-sm-8 col-sm-offset-2">
 				<h3>Getting Started </h3>
-				<p>You don't need the CSS file but you have to define at least a label class. By default, it is called <code>floating-label</code></p>
+				<p>You don't need the CSS file, as it is not provided, but you have to define at least a label class. By default, it is called <code>floating-label</code></p>
 
 				<ul>
 					<li>Make sure that your form's input has <code>id</code> and <code>placeholder</code> attributes;</li>
@@ -107,7 +115,7 @@
 			    	<div class="panel-body">
 			    		<pre>
 $('#form1').floatinglabel({
-    ignoreId        : ['#recaptcha', '#imagefield'],
+    ignoreId        : ['recaptcha', 'imagefield'],
     animationIn     : {top: '-25px', opacity: '1', left: '25px'},
     animationOut    : {top: '0', opacity: '0', left: '0'},
     delayIn         : 1500,
@@ -131,7 +139,7 @@ $('#form1').floatinglabel({
 			    	<div class="panel-body">
 			    		<p>Array of strings that should have IDs of fields that will be ignored and won't have a label created by this code.</p>
 		    			<strong>Example:</strong>
-			    		<pre>ignoreId: ['#id', '#anotherfield', '#anothersadfield'],</pre>
+			    		<pre>ignoreId: ['id', 'anotherfield', 'anothersadfield'],</pre>
 			    	</div>
 		    	</div>
 
