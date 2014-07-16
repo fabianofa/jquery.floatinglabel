@@ -7,3 +7,8 @@ Demo & Docs:
 ====================
 http://fabianofa.github.io/jquery.floatinglabel
 
+
+
+-------------------
+Contact?
+[@fabianodev](https://twitter.com/fabianodev)
