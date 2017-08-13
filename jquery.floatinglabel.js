@@ -1,7 +1,7 @@
 /**
  *
- * Floating label 0.1.0 - Floating label based on placeholder attribute.
- * Version 0.1.0
+ * Floating label 0.2.0 - Floating label based on placeholder attribute.
+ * Version 0.2.0
  * @requires jQuery v1.7.0
  * 
  * http://www.opensource.org/licenses/mit-license.php
@@ -64,11 +64,14 @@
         input.before(labelElement);
 
         // Attaching events for animation
-        input.focusin(function(){
+        input.on("focusin.floatinglabel", function(){
+            input.trigger("floatinginstart");
             labelElement.stop().animate(options.animationIn, options.delayIn, options.easingIn);
+            input.trigger("floatinginend");
         });
 
-        input.focusout(function(){
+        input.on("focusout.floatinglabel", function(){
+            input.trigger("floatingoutstart");
             // if input field is no empty, then 
             // pin the label to make sure that
             // the user knows which field is that
@@ -76,18 +79,16 @@
                 labelElement.addClass(options.pinClass);
             else
                 labelElement.animate(options.animationOut, options.delayOut, options.easingOut);
-        });
 
+            input.trigger("floatingoutend");
+        });
     }
 
     // Attaching a label for every input.
     $(input).each(function(){
-        // console.log(options.ignoreId.hasOwnProperty());
-        // console.log($(this).attr('id'));
         if ($.inArray($(this).attr('id'), options.ignoreId) == -1)
             createLabel($(this));
     });
-
 
     return this;
   };
