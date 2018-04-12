@@ -66,14 +66,14 @@
 
 &lt;script src=&quot;//code.jquery.com/jquery-1.11.0.min.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;javascripts/jquery.floatinglabel.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt; 
-	$(&#39;#form1&#39;).floatinglabel({ ignoreId: ['ignored'] }); 
+&lt;script&gt;
+	$(&#39;#form1&#39;).floatinglabel({ ignoreId: ['ignored'] });
 &lt;/script&gt;
 				</pre>
 				<hr>
 			</div>
 		</div>
-		
+
 		<div id="download" class="row">
 			<div class="col-sm-8 col-sm-offset-2">
 				<h3>Getting Started </h3>
@@ -163,7 +163,7 @@ $('#form1').floatinglabel({
 			    	<div class="panel-body">
 			    		<p>Follows <a href="http://api.jquery.com/animate/" target="_blank">jQuery animation syntax</a>. It represents the effect when user <strong>focus out the input</strong>.</p>
 			    		<strong>Example:</strong>
-			    		<pre>animationIn: {top: '0', opacity: '0'}</pre>
+			    		<pre>animationOut: {top: '0', opacity: '0'}</pre>
 			    	</div>
 		    	</div>
 
@@ -187,7 +187,7 @@ $('#form1').floatinglabel({
 			    	<div class="panel-body">
 			    		<p>Duration of the <strong>animationOut</strong> effect in <strong>miliseconds</strong>.</p>
 			    		<strong>Example:</strong>
-			    		<pre>delayIn: 150</pre>
+			    		<pre>delayOut: 150</pre>
 			    	</div>
 		    	</div>
 
@@ -200,7 +200,7 @@ $('#form1').floatinglabel({
 			    	<div class="panel-body">
 			    		<p>Easing for the animationIn, like <a href="http://gsgd.co.uk/sandbox/jquery/easing/" target="_blank">GSGD's plugin</a>. You must include the easing file to use a string value here.</p>
 			    		<strong>Example:</strong>
-			    		<pre>delayIn: 'easeInOutCirc'</pre>
+			    		<pre>easingIn: 'easeInOutCirc'</pre>
 			    		<p class="alert alert-info">For complete visual reference of easings, check out <a href="http://easings.net/" target="_blank">easings.net</a></p>
 			    		<p class="alert alert-danger">Providing a string name without easing javascript file will result in a 'undefined' error.</p>
 			    	</div>
@@ -270,11 +270,11 @@ $('#form1').floatinglabel({
 			</div>
 		</div>
 	</div>
-	
+
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<script src="javascripts/jquery.floatinglabel.js"></script>
-	<script> 
+	<script>
 		$('#form1').floatinglabel({ ignoreId: ['ignored'] });
 	</script>
 	</body>
